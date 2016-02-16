@@ -6,12 +6,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
+@RequestMapping("/greet")
 public class HelloController {
 
 	@RequestMapping("/welcome")
 	public ModelAndView helloWorld() {
 		ModelAndView model = new ModelAndView("HelloPage");
-		model.addObject("welcomeMessage", "Hi Radek, welcome to the first Spring Application");
+		model.addObject("welcomeMessage", "Hello Radek");
+		return model;
+	}
+	
+	@RequestMapping("/hi")
+	public ModelAndView hiWorld() {
+		ModelAndView model = new ModelAndView("HelloPage");
+		model.addObject("welcomeMessage", "Hi Radek");
 		return model;
 	}
 }
