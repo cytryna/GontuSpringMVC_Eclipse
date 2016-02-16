@@ -1,12 +1,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	xsi:schemaLocation="
+ 		http://www.springframework.org/schema/beans
+    	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<bean id="HandlerMapping"
-		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+	<!-- <bean id="HandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" 
+		/> -->
 
-	<bean name="/welcome.html" class="com.mkyong.common.controller.WelcomeController" />
+	<!-- <bean name="/welcome.html" class="s10338.hellocontroller.HelloController" 
+		/> -->
+
+	<context:component-scan base-package="s10338.hellocontroller" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
