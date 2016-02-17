@@ -3,21 +3,22 @@ package s10338.hellocontroller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping("/greet")
+//@RequestMapping("/greet")
 public class HelloController {
 
-	@RequestMapping("/welcome/countryName/{userName}")
+	@RequestMapping(value= "/welcome/countryName/{userName}", method = RequestMethod.GET)
 	public ModelAndView helloWorld(@PathVariable("userName") String name) {
 		ModelAndView model = new ModelAndView("HelloPage");
 		model.addObject("welcomeMessage", "Hello " + name);
 		return model;
 	}
 	
-	@RequestMapping("/hi")
+	@RequestMapping("/hi/{userName}")
 	public ModelAndView hiWorld(@PathVariable("userName") String name) {
 		ModelAndView model = new ModelAndView("HelloPage");
 		model.addObject("welcomeMessage", "Hi " + name);
