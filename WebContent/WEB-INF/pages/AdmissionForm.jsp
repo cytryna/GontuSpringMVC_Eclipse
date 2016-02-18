@@ -8,7 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	
+	<h2>${headerMsg}</h2>
 	<h1> STUDENT ADMISSION FORM FOR ENGINEERING COURSES</h1>
 	
 	<form action="/GontuSpringMVC_Eclipse/submitAdmissionForm" method="post">
