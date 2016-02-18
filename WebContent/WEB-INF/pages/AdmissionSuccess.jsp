@@ -9,9 +9,21 @@
 </head>
 <body>
 
-	<h1>Congratulations!! the Engineering college has processes your Application form successfully</h1>
-	
-	<h2>${msg}</h2>
-	
+	<h1>Congratulations!! the Engineering college has processes your
+		Application form successfully</h1>
+
+	<h2>${headerMsg}</h2>
+
+	<table>
+		<tr>
+			<td>Student name:</td>
+			<td>${student1.studentName}</td>
+		</tr>
+		<tr>
+			<td>Student hobby:</td>
+			<td>${student1.studentHobby}</td>
+		</tr>
+	</table>
+
 </body>
 </html>

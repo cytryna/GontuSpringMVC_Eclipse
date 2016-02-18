@@ -1,6 +1,7 @@
 package s10338.hellocontroller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,11 +19,12 @@ public class StudentAdmissionController {
 	}
 
 	@RequestMapping(value = "/submitAdmissionForm", method = RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@RequestParam("studentName") String name,
-			@RequestParam("studentHobby") String hobby) {
-
+	public ModelAndView submitAdmissionForm(@ModelAttribute("student1") Student student) {
+		
+		
 		ModelAndView model = new ModelAndView("AdmissionSuccess");
-		model.addObject("msg", "Details submittes by you:: Name: " + name + ", Hobby: " + hobby);
+		model.addObject("headerMsg", "nagłówek -> Gontu Collage of Engineering");
+
 
 		return model;
 	}
