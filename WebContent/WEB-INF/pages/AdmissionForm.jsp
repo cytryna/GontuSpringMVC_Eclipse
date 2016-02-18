@@ -8,18 +8,42 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+
 	<h2>${headerMsg}</h2>
-	<h1> STUDENT ADMISSION FORM FOR ENGINEERING COURSES</h1>
-	
-	<form action="/GontuSpringMVC_Eclipse/submitAdmissionForm" method="post">
-		<p>
-			Student's Name : <input type ="text" name="studentName"/>
-		</p>
-		<p>
-			Student's Hobby : <input type ="text" name="studentHobby"/>
-		</p>
-		<input type="submit" value = "Submit this form by click here"/>
+	<h1>STUDENT ADMISSION FORM FOR ENGINEERING COURSES</h1>
+
+	<form action="/GontuSpringMVC_Eclipse/submitAdmissionForm"
+		method="post">
+		<table>
+			<tr>
+				<td>Student name:</td>
+				<td><input type="text" name="studentName" /></td>
+			</tr>
+			<tr>
+				<td>Student hobby:</td>
+				<td><input type="text" name="studentHobby" /></td>
+			</tr>
+			<tr>
+				<td>Student mobile:</td>
+				<td><input type="text" name="studentMobile" /></td>
+			</tr>
+			<tr>
+				<td>Student data urodzenia:</td>
+				<td><input type="text" name="studentDOB" /></td>
+			</tr>
+			<tr>
+				<td>Student's skills set:</td>
+				<td>
+				<select name="studentSkills" multiple>
+						<option value="Java_Core">Java_Core</option>
+						<option value="Spring_Core">Spring_Core</option>
+						<option value="Spring_MVC">Spring_MVC</option>
+				</select></td>
+			</tr>
+		</table>
+
+		<input type="submit" value="Submit this form by click here" />
+
 	</form>
 </body>
 </html>
