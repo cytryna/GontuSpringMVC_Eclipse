@@ -34,7 +34,15 @@
 		<tr>
 			<td>Student Skills:</td>
 			<td>${student1.studentSkills}</td>
-		</tr> 
+		</tr>
+		<tr>
+			<td>Student Address: :</td>
+		</tr>
+		<tr>
+			<td>street</td>
+			<td>street: ${student1.studentAddress.street} 
+			number: ${student1.studentAddress.number}</td>
+		</tr>
 	</table>
 
 </body>
