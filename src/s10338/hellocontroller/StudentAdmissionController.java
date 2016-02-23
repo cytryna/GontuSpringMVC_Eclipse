@@ -3,6 +3,8 @@ package s10338.hellocontroller;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,9 +20,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class StudentAdmissionController {
 
-	@InitBinder
+//	@InitBinder
 	public void initBinder(WebDataBinder binder) {
-		binder.setDisallowedFields(new String[] { "studentMobile" });
+//		binder.setDisallowedFields(new String[] { "studentMobile" });
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy****MM****dd");
 		binder.registerCustomEditor(Date.class, "studentDOB", new CustomDateEditor(dateFormat, false));
 		binder.registerCustomEditor(String.class, "studentName", new StudentNameEditor());
@@ -41,7 +43,7 @@ public class StudentAdmissionController {
 	}
 
 	@RequestMapping(value = "/submitAdmissionForm", method = RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@ModelAttribute("student1") Student student, BindingResult result) {
+	public ModelAndView submitAdmissionForm(@Valid @ModelAttribute("student1") Student student, BindingResult result) {
 
 		if (result.hasErrors()) {
 			ModelAndView errorModel = new ModelAndView("AdmissionForm");
