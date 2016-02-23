@@ -23,6 +23,7 @@ public class StudentAdmissionController {
 		binder.setDisallowedFields(new String[] { "studentMobile" });
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy****MM****dd");
 		binder.registerCustomEditor(Date.class, "studentDOB", new CustomDateEditor(dateFormat, false));
+		binder.registerCustomEditor(String.class, "studentName", new StudentNameEditor());
 	}
 
 	@RequestMapping(value = "/admissionForm", method = RequestMethod.GET)
